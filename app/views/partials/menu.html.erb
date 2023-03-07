@@ -1,0 +1,13 @@
+<nav>
+    <ul>
+        <li><%=link_to "Categories",categories_path%></li>
+        <li><%=link_to "Movements", movements_path%></li>
+    </ul>
+    <ul>
+        <li align="left">
+            <% if user_signed_in? %>
+                <%=link_to "Sign out", destroy_user_session_path, method: :delete%>
+            <% end %>
+        </li>
+    </ul>
+</nav>

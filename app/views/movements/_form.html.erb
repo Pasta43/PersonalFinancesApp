@@ -29,13 +29,6 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.select :user_id, 
-                    options_for_select(@users.map{|user| [user.email,user.id]}), 
-                    include_blank: "Choose a user" %>
-  </div>
-
-  <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>

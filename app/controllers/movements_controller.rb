@@ -4,7 +4,7 @@ class MovementsController < ApplicationController
 
   # GET /movements or /movements.json
   def index
-    @movements = Movement.all
+    @movements = current_user.movements
   end
 
   # GET /movements/1 or /movements/1.json
@@ -23,7 +23,7 @@ class MovementsController < ApplicationController
   # POST /movements or /movements.json
   def create
     @movement = Movement.new(movement_params)
-
+    @movement.user = current_user
     respond_to do |format|
       if @movement.save
         format.html { redirect_to movement_url(@movement), notice: "Movement was successfully created." }
